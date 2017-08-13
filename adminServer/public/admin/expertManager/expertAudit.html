@@ -1,0 +1,43 @@
+<div id="expertAuditDiv">
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>真实姓名</th>
+            <th>任职机构</th>
+            <th>头衔/职位</th>
+            <th>工作年限</th>
+            <th>手机号码</th>
+            <th>常驻城市</th>
+            <th>特长标签</th>
+            <th>小纸条定价</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: expertList">
+            <tr>
+                <td align="center"><span data-bind="text: $index()+1"></span></td>
+                <td align="center"><span data-bind="text: info.name"></span></td>
+                <td align="left"><span data-bind="text: info.company"></span></td>
+                <td align="center"><span data-bind="text: info.title"></span></td>
+                <td align="center"><span data-bind="text: info.work_year"></span></td>
+                <td align="center"><span data-bind="text: expert_info.phone"></span></td>
+                <td align="center"><span data-bind="text: info.city"></span></td>
+                <td align="center"><span data-bind="text: info.major"></span></td>
+                <td align="center"><span data-bind="text: info.note_price/100"></span></td>
+                <td align="center">
+                    <a class="waves-effect waves-light btn" data-bind="click: initExpertAudit">专家审核</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPage()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPos">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPage()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("expertManager/js/expertAudit.js");</script>

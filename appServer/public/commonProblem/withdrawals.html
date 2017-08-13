@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>常见问题</title>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.0.1/css/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link href="css/commonProblem.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="row ruleTitleDiv1">
+        <div class="large-12 medium-12 small-12 ruleTitleText">常见问题</div>
+    </div>
+    <div class="row ruleTitleDiv3">Q：我的收入怎么查看？</div>
+    <div class="row ruleContent">
+        <div style="padding-right: 0rem" class="large-1 medium-1 small-1 column">A：</div>
+        <div style="padding-right: 0rem" class="large-11 medium-11 small-11 column">在“个人中心—钱包”中查看，达人可在“达人中心—数据中心”中查看详细收益。</div>
+    </div>
+    <div class="row ruleTitleDiv3">Q：如何提现？</div>
+    <div class="row ruleContent">
+        <div style="padding-right: 0rem" class="large-1 medium-1 small-1 column">A：</div>
+        <div style="padding-right: 0rem" class="large-11 medium-11 small-11 column">可在我的钱包中绑定您的支付宝账户用于提现操作，具体到账时间以支付宝相关内容为则。</div>
+    </div>
+    <div class="row ruleTitleDiv3">Q：提现是否有次数及金额规则？</div>
+    <div class="row ruleContent">
+        <div style="padding-right: 0rem" class="large-1 medium-1 small-1 column">A：</div>
+        <div style="padding-right: 0rem" class="large-11 medium-11 small-11 column">提现通道每月可提现一次，金额无上限。</div>
+    </div>
+    <div class="row ruleTitleDiv3">Q：偷听收益怎么计算？</div>
+    <div class="row ruleContent">
+        <div style="padding-right: 0rem" class="large-1 medium-1 small-1 column">A：</div>
+        <div style="padding-right: 0rem" class="large-11 medium-11 small-11 column">偷听者支付的费用将由提问者及回复问题的达人双方平分。</div>
+    </div>
+    <div class="row ruleTitleDiv3" id="payQ" style="display: none">Q：平台分成怎么计算，如何提现？</div>
+    <div class="row ruleContent" id="payA" style="display: none">
+        <div style="padding-right: 0rem" class="large-1 medium-1 small-1 column">A：</div>
+        <div style="padding-right: 0rem" class="large-11 medium-11 small-11 column">平台分成占您总收益额的10%，在每次提现时扣除（如您发起提现10元，则实际到账9元）。</div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="../libs/util.js"></script>
+<script>
+    var userID = util.getQueryString("userID");
+    var authSign = util.getQueryString("authSign");
+    util.callServerFunction({auth: window.btoa("userID="+userID+"&authSign="+authSign)},'user?random='+parseInt(Math.random()*10000), {}, function(data) {
+        if(data.code == 900) {
+            if(data.info.expert_status != "notVerified"){
+                $("#payQ,#payA").css("display","block");
+            }
+        } else {
+            util.errorCodeApi(data);
+        }
+    },"GET");
+</script>
+</html>

@@ -1,0 +1,15 @@
+html,body {
+    font-family: "Microsoft YaHei",Tahoma,Arial,Roboto,¡±Droid Sans¡±,¡±Helvetica Neue¡±,¡±Droid Sans Fallback¡±,¡±Heiti SC¡±,¡±Hiragino Sans GB¡±,Simsun,sans-self;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    word-wrap: break-word;word-break:break-all;
+}
+
+.bootstrap-datetimepicker-widget table td span {
+    width: 34px;
+}

@@ -1,0 +1,88 @@
+{
+  "apps": [
+    {
+      "name": "ctapp",
+      "cwd": "/home/being/byask/appServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_memory_restart": "1G",
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctfile",
+      "cwd": "/home/being/byask/fileServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_memory_restart": "1G",
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctmqtt",
+      "cwd": "/home/being/byask/mqttServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_memory_restart": "1G",
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctadmin",
+      "cwd": "/home/being/byask/adminServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_memory_restart": "1G",
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    }
+  ]
+}

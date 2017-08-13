@@ -1,0 +1,71 @@
+html,body {
+    font-family: Helvetica;
+    background-color: #fafafa;
+    margin: 0px auto;
+    padding: 0.5rem;
+    color: #999999;
+    -webkit-user-select: none;
+}
+
+.infoDiv {
+    position: relative;
+}
+
+.userNick {
+    position: absolute;
+    color: #ffffff;
+    left: 1rem;
+    top: 1rem;
+    font-size: 1.1rem;
+}
+
+.userName {
+    position: absolute;
+    color: #cddef1;
+    left: 1rem;
+    top: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.note {
+    padding: 1rem 0 0 0;
+}
+
+table {
+    border-collapse: inherit;
+}
+
+tr {
+    background-color: #fafafa !important;
+}
+
+td {
+    padding-top: 0px !important;
+    padding-bottom: 0.8rem !important;
+    padding-right: 0px !important;
+    font-size: 0.9rem;
+}
+
+.borderLeft {
+    border-left: 4px #4289ff solid;
+    vertical-align: top;
+    border-radius: 5px
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 1080px) {
+    html {
+        font-size: 16px;
+    }
+}

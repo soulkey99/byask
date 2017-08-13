@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试页</title>
+</head>
+<body>
+<div>
+    <div>登陆</div>
+    <form action="/rest/login" method="post">
+        <input type="text" name="userName" placeholder="user name" value="test"><br>
+        <input type="text" name="passwd" placeholder="pass word" value="test"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>注销</div>
+    <form action="/rest/logout" method="post">
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>修改密码</div>
+    <form action="/rest/user/passwd" method="post">
+        <input type="text" name="old_passwd" placeholder="old password"><br>
+        <input type="text" name="new_passwd" placeholder="new password"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>审核专家结果</div>
+    <form action="/rest/expert/check" method="post">
+        <input type="text" name="apply_id" placeholder="apply id"><br>
+        <input type="text" name="status" placeholder="status"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>修改在线参数</div>
+    <form action="/rest/onlineConfig/577f42b5844254240c62efda" method="post">
+        <input type="text" name="value" placeholder="value"><br>
+        <input type="text" name="desc" placeholder="desc"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试上传文件</div>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <input type="text" name="vendor" placeholder="vendor"><br>
+        <input type="file" name="upload" multiple="multiple"><br>
+        <input type="submit" value="Upload">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试创建用户</div>
+    <form action="/rest/user" method="post">
+        <input type="text" name="phone" placeholder="value"><br>
+        <input type="text" name="nick" placeholder="desc"><br>
+        <input type="text" name="avatar" placeholder="value"><br>
+        <input type="text" name="name" placeholder="desc"><br>
+        <input type="text" name="passwd" placeholder="value"><br>
+        <input type="text" name="city" placeholder="desc"><br>
+        <input type="text" name="title" placeholder="value"><br>
+        <input type="text" name="company" placeholder="desc"><br>
+        <input type="text" name="card" placeholder="value"><br>
+        <input type="text" name="work_year" placeholder="desc"><br>
+        <input type="text" name="banner" placeholder="value"><br>
+        <input type="text" name="major" placeholder="desc"><br>
+        <input type="text" name="self_intro" placeholder="value"><br>
+        <input type="text" name="status" placeholder="desc"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试修改用户信息</div>
+    <form action="/rest/user/560ba4eb5a83a29c23fd142f" method="post">
+        <input type="text" name="nick" placeholder="desc"><br>
+        <input type="text" name="avatar" placeholder="value"><br>
+        <input type="text" name="name" placeholder="desc"><br>
+        <input type="text" name="city" placeholder="desc"><br>
+        <input type="text" name="title" placeholder="value"><br>
+        <input type="text" name="company" placeholder="desc"><br>
+        <input type="text" name="card" placeholder="value"><br>
+        <input type="text" name="work_year" placeholder="desc"><br>
+        <input type="text" name="banner" placeholder="value"><br>
+        <input type="text" name="major" placeholder="desc"><br>
+        <input type="text" name="self_intro" placeholder="value"><br>
+        <input type="text" name="status" placeholder="desc"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试编辑首页推荐</div>
+    <form action="/rest/recommend/5763cb57e7b2657c2264220a" method="post">
+        <input type="text" name="type" placeholder="type"><br>
+        <input type="text" name="dest" placeholder="dest"><br>
+        <input type="text" name="remark" placeholder="remark"><br>
+        <input type="text" name="seq" placeholder="seq"><br>
+        <input type="text" name="special" placeholder="special"><br>
+        <input type="text" name="ad" placeholder="ad"><br>
+        <input type="text" name="valid" placeholder="valid"><br>
+        <input type="text" name="startAt" placeholder="startAt"><br>
+        <input type="text" name="endAt" placeholder="endAt"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试编辑首页banner</div>
+    <form action="/rest/banner/5763c2c11b20de90056366e9" method="post">
+        <input type="text" name="img" placeholder="img"><br>
+        <input type="text" name="dest" placeholder="dest"><br>
+        <input type="text" name="remark" placeholder="remark"><br>
+        <input type="text" name="valid" placeholder="valid"><br>
+        <input type="text" name="seq" placeholder="seq"><br>
+        <input type="text" name="type" placeholder="type"><br>
+        <input type="text" name="startAt" placeholder="startAt"><br>
+        <input type="text" name="endAt" placeholder="endAt"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试编辑首页分类</div>
+    <form action="/rest/category/57ad6c332806ee8b171c689f" method="post">
+        <!--<input type="text" name="categoryName" placeholder="categoryName"><br>-->
+        <!--<input type="text" name="type" placeholder="type"><br>-->
+        <!--<input type="text" name="order_banner" placeholder="order_banner"><br>-->
+        <!--<input type="text" name="subCategoryName" placeholder="subCategoryName"><br>-->
+        <!--<input type="text" name="isHome" placeholder="isHome"><br>-->
+        <!--<input type="text" name="homeSeq" placeholder="homeSeq"><br>-->
+        <input type="text" name="valid" placeholder="valid"><br>
+        <!--<input type="text" name="desc" placeholder="desc"><br>-->
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试创建推广码</div>
+    <form action="/rest/shareCode" method="post">
+        <input type="text" name="desc" placeholder="desc"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试编辑推广码</div>
+    <form action="/rest/shareCode/E6Wzm" method="post">
+        <input type="text" name="desc" placeholder="desc"><br>
+        <input type="submit">
+    </form>
+</div>
+<br/>
+<div>
+    <div>测试加黑名单</div>
+    <form action="/rest/user/560ba4eb5a83a29c23fd142f/black" method="post">
+        <input type="text" name="block_util" placeholder="util">2016-08-25 12:00<br>
+        <input type="text" name="block_reason" placeholder="reason">test123<br>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

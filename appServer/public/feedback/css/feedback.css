@@ -1,0 +1,126 @@
+a, input, div{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0px auto;
+    font-size: 16px;
+    line-height: 1.2rem;
+    background-color: #f2f4f7;
+}
+
+input,textarea {
+    border: 0px !important;
+    box-shadow: inset 0 0px 0px rgba(10,10,10,.1) !important;
+    color: #828b97 !important;
+    margin: 0 !important;
+    background-color:rgba(0,0,0,0);
+    padding: 0px !important;
+    font-size: 0.8rem !important;
+    height: 100% !important;
+    text-shadow: 0px 0px 0px #c6d1e0;
+    -webkit-text-fill-color: transparent;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    color: #A9A9A9;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+textarea {
+    width: 100% !important;
+    box-shadow: inset 0 0px 0px rgba(10,10,10,0) !important;
+    border: 0px !important;
+    border-radius: 6px !important;
+    background-color:rgba(0,0,0,0) !important;
+    margin-bottom: 4%;
+    color: #c6d1e0 !important;
+    resize: none;
+}
+
+section {
+    padding: 2.5% 5% 0 5%;
+    margin-bottom: 17%;
+}
+
+.infoDiv {
+    width: 100%;
+    border-radius: 0.4rem;
+    background-color: white;
+    padding: 5% 5% 0 5%;
+    margin-bottom: 5%;
+}
+
+.title {
+    color: #535860;
+    font-size: 1rem;
+}
+
+.sign {
+    width: 20px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #4289ff;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.errorSign {
+    background-color: #f96363;
+}
+
+.inputDiv {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.subBtn {
+    height: 2rem;
+    line-height: 2rem;
+    width: 40%;
+    margin: 3rem auto auto auto;
+    text-align: center;
+    background-color: #4289ff;
+    border-radius: 2rem;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 1rem;
+    text-align: center;
+}
+
+/*4 4s*/
+@media only screen and (device-height :480px) and (-webkit-device-pixel-ratio:2){
+    html {
+        font-size: 16px;
+    }
+}
+
+/* 兼容iphone5 */
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+    html {
+        font-size: 16px;
+    }
+}
+
+/*6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+    html {
+        font-size: 18px;
+    }
+}
+
+/*6+*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+    html {
+        font-size: 19px;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>绑定支付宝</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="//cdn.bootcss.com/hover.css/2.0.2/css/hover-min.css">
+    <link type="text/css" rel="stylesheet" href="css/bindingAlipay.css">
+</head>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/foundation/6.1.1/foundation.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script type="text/javascript" src="../libs/util.js"></script>
+<script type="text/javascript" src="js/bindingAlipay.js"></script>
+<body style="visibility: hidden;">
+    <div style="position: absolute;z-index: 1">
+        <header class="row">
+            <div class="large-4 medium-4 small-4 columns cardDiv">
+                <img class="cardImg" src="images/card.png">
+            </div>
+            <div class="large-4 medium-4 small-4 columns cardDiv">
+                <div class="row">
+                    <div class="large-4 medium-4 small-4 columns leftDiv"><img class="leftImg" src="images/left.png"></div>
+                    <div class="large-4 medium-4 small-4 columns middleDiv"><div class="middleText">绑定</div></div>
+                    <div class="large-4 medium-4 small-4 columns rightDiv" ><img class="rightImg" src="images/right.png"></div>
+                </div>
+            </div>
+            <div class="large-4 medium-4 small-4 columns alipayDiv">
+                <img class="alipayImg" src="images/alipay.png">
+            </div>
+        </header>
+        <article>
+            <div class="row inputDiv">
+                <div class="large-12 medium-12 small-12 hvr-underline-from-left"><input type="text" id="alipayNumber" placeholder="支付宝账号" data-bind="value: alipayNumber, valueUpdate: 'afterkeydown'"></div>
+                <div class="large-12 medium-12 small-12 hvr-underline-from-left"><input type="text" id="alipayNick" placeholder="支付宝昵称" data-bind="value: alipayNick, valueUpdate: 'afterkeydown'"></div>
+                <div class="large-12 medium-12 small-12 hvr-underline-from-left">
+                    <input type="number" id="alipayPhone" oninput="setSMBtnBgc()" data-bind="value: alipayPhone, valueUpdate: 'afterkeydown'">
+                    <div class="msgButton" onclick="javascript:void(0)">获取验证码</div>
+                </div>
+                <div class="large-12 medium-12 small-12 hvr-underline-from-left">
+                    <input type="number" id="alipayCode" placeholder="验证码"  data-bind="value: alipayCode, valueUpdate: 'afterkeydown'" oninput="delError()">
+                    <div class="errorMsg" data-bind="visible: isError() && alipayCode()!=''">
+                        <img src="images/error.png"><span>错误</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row note">
+                <img src="images/no.png" data-bind="attr: {src: isAgree()==true?'images/yes.png':'images/no.png'},click: changeImg"><span>已经仔细阅读<a href="javascript:void(0)" onclick="showPayAgreement()">《问达教师支付协议》</a></span>
+            </div>
+        </article>
+        <footer>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 column" data-bind="visible: !(alipayNumber()!=''&&alipayNick()!=''&&alipayPhone().length==11&&alipayCode()!=''&&isAgree())">立即绑定</div>
+                <div class="large-12 medium-12 small-12 column bindBtnText" onclick="binding()" ontouchstart="setBgColorIn(this)" ontouchend="setBgColorOut(this)" data-bind="visible: alipayNumber()!=''&&alipayNick()!=''&&alipayPhone().length==11&&alipayCode()!=''&&isAgree()">立即绑定</div>
+            </div>
+        </footer>
+    </div>
+    <div class="payNote">
+        <object type="text/x-scriptlet" data="payAgreementT.html" width=100% height=90%></object>
+        <div class="subBtn" ontouchstart="setBgColorIn(this)" ontouchend="setBgColorOut(this)" onclick="hidePayAgreement()">我知道了</div>
+    </div>
+</body>
+</html>

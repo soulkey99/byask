@@ -1,0 +1,71 @@
+<!-- 加载进度条 -->
+<link rel="stylesheet" href="../common/include/css/panel.css"/>
+<script type="text/javascript" src="../common/include/js/panel.js"></script>
+<!-- 顶部菜单 START-->
+<nav role="navigation" class="navbar navbar-static-top" style="margin-left: 0px !important;">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+                <span class="entypo-menu"></span>
+            </button>
+            <div id="logo-mobile" class="visible-xs">
+                <h1>后台管理<span>v1.0</span></h1>
+            </div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+            <div id="nt-title-container" class="navbar-left running-text visible-lg">
+                <ul class="date-top">
+                    <li class="entypo-calendar" style="margin-right:5px"></li>
+                    <li id="Date"></li>
+                </ul>
+                <ul id="digital-clock" class="digital">
+                    <li class="entypo-clock" style="margin-right:5px"></li>
+                    <li class="hour"></li>
+                    <li>:</li>
+                    <li class="min"></li>
+                    <li>:</li>
+                    <li class="sec"></li>
+                    <li class="meridiem"></li>
+                </ul>
+                <!-- ul id="nt-title">
+                    <li><i class="wi-day-lightning"></i>&#160;&#160;Berlin&#160;
+                        <b>85</b><i class="wi-fahrenheit"></i>&#160;; 15km/h
+                    </li>
+                    <li><i class="wi-day-lightning"></i>&#160;&#160;Yogyakarta&#160;
+                        <b>85</b><i class="wi-fahrenheit"></i>&#160;; Tonight- 72 °F (22.2 °C)
+                    </li>
+
+                    <li><i class="wi-day-lightning"></i>&#160;&#160;Sttugart&#160;
+                        <b>85</b><i class="wi-fahrenheit"></i>&#160;; 15km/h
+                    </li>
+
+                    <li><i class="wi-day-lightning"></i>&#160;&#160;Muchen&#160;
+                        <b>85</b><i class="wi-fahrenheit"></i>&#160;; 15km/h
+                    </li>
+
+                    <li><i class="wi-day-lightning"></i>&#160;&#160;Frankurt&#160;
+                        <b>85</b><i class="wi-fahrenheit"></i>&#160;; 15km/h
+                    </li>
+                </ul -->
+            </div>
+            <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img alt="" class="admin-pic img-circle" src="../common/assets/img/adminPhoto.png">您好, <span id="rightNick"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" onclick="initChangePassword()" style="cursor:pointer"><span class="fontawesome-key"></span>&#160;&#160;修改密码</a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" onclick="loginOut()" style="cursor:pointer"><span class="icon-gear"></span>&#160;&#160;退出</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<!-- 顶部菜单 END -->

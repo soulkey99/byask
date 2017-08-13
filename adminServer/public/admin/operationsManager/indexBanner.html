@@ -1,0 +1,55 @@
+<div id="indexBannerMain"><br>
+    <div class="row">
+        <div class="input-field col l1 s3">
+            <select id="valid">
+                <option value="" selected>全部</option>
+                <option value="true">有效</option>
+                <option value="false">无效</option>
+                <label>是/否有效</label>
+            </select>
+        </div>
+        <div class="input-field col l3 s9">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadIndexBannerList()">检 索</a>
+            <a class="waves-effect waves-light btn" href="javascript:initAddBanner()">添加Banner</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th align="center" class="mdl-data-table__cell--non-numeric">序号</th>
+            <th align="center">有效时间</th>
+            <th align="center">失效时间</th>
+            <th align="center">Banner图片</th>
+            <th align="center">链接类型</th>
+            <th align="center">显示顺序</th>
+            <th align="center" class="col-lg-2">备注</th>
+            <th align="center">是/否有效</th>
+            <th align="center">操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: indexBannerList">
+        <tr>
+            <td align="center" class="mdl-data-table__cell--non-numeric"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(startAt)"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(endAt)"></span></td>
+            <td align="center"><a href="javascript:void(0);" data-bind="click: showSrcImg"><img class="img-responsive" style="max-width: 80px;max-height: 42px" data-bind="attr:{src: img}"></a></td>
+            <td align="center"><span data-bind="text: type=='user'?'跳转至专家':'其它'"></span></td>
+            <td align="center"><span data-bind="text: seq"></span></td>
+            <td align="left"><span data-bind="text: remark"></span></td>
+            <td align="center"><div class="switch"><label>Off<input type="checkbox" data-bind="attr: {checked: valid},click: setValid" ><span class="lever"></span>On</label></div></td>
+            <td align="center">
+                <a href="" class='waves-effect waves-light btn' data-bind="click: initEditBanner">编辑</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="#!" data-bind="click:prevPage"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPos">1</a></li>
+            <li class="waves-effect"><a href="#!" data-bind="click:nextPage"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/indexBanner.js");</script>

@@ -1,0 +1,63 @@
+<div id="noteManager"><br>
+    <div class="row">
+        <div class="input-field col l1">
+            <input id="u_phone" type="text">
+            <label for="u_phone" class="">用户手机号</label>
+        </div>
+        <div class="input-field col l1">
+            <select id="u_type">
+                <option value="expert">专家订单</option>
+                <option value="false">普通订单</option>
+                <label>订单类型</label>
+            </select>
+        </div>
+        <div class="input-field col l1">
+            <select id="u_status">
+                <option value="">订单状态</option>
+                <option value="pending">已提交</option>
+                <option value="confirmed">专家已接单</option>
+                <option value="rejected">专家拒接</option>
+                <option value="paid">用户已支付</option>
+                <option value="toBeFinished">专家已回答</option>
+                <option value="finished">用户已评价</option>
+                <label>订单状态</label>
+            </select>
+        </div>
+        <div class="input-field col l3">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadOrderList()">检 索</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>专家姓名</th>
+            <th>创建时间</th>
+            <th>价格</th>
+            <th style="width: 40%">小纸条内容</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: noteList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: expert_info.name"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(createdAt)"></span></td>
+            <td align="center"><span data-bind="text: price"></span></td>
+            <td align="left"><span data-bind="text: content"></span></td>
+            <td align="right">
+                <a href="" class="btn" data-bind="click: showNoteDetail">小纸条详情</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPageNote()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPosNote">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPageNote()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/note.js");</script>

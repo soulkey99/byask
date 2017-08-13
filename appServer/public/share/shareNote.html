@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分享小纸条</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="css/shareNote.css">
+</head>
+<body style="display: none">
+<header>
+    <img src="images/headBg.png">
+    <img class="downloadBtn" src="images/downloadBtnOut.png" ontouchstart="changeBtn(this)" ontouchend="changeBtn(this)" onclick="download()">
+</header>
+<section class="userInfo">
+    <img src="images/noteBg.png">
+    <div class="user">
+        <div class="userAvatar"><img data-bind="attr:{src: userAvatar}"></div>
+        <div class="userName" data-bind="text: userNick"></div>
+        <div class="userPrice"><span data-bind="text: userPrice"></span><span class="priceSign">¥</span></div>
+    </div>
+    <div class="noteContent" data-bind="text: userContent"></div>
+</section>
+<section>
+    <img src="images/noteHeader.png">
+    <div class="expertInfo">
+        <div class="expert">
+            <div class="expertAvatar"><img data-bind="attr:{src: expertAvatar}"></div>
+            <div class="expertContent" onclick="isDownload()">
+                <div class="expertName"><span data-bind="text: expertName"></span><span class="expertTitle" data-bind="text: expertTitle"></span></div>
+                <div class="expertSound">
+                    <img src="images/wifi.png">
+                    <span id="audioSpan">
+                        <span id="audioText">支付1¥偷听</span>
+                        <audio id='audioMain' src='' style='width: 148px;height: 35px;display: none'></audio>
+                    </span>
+                </div>
+            </div>
+            <div class="expertTime"><span data-bind="text: noteLength"></span>s</div>
+        </div>
+        <div class="listen"><span style="color: #c6d1e0">———</span>&nbsp;&nbsp;&nbsp;Ta们正在偷听&nbsp;&nbsp;&nbsp;<span style="color: #c6d1e0">———</span></div>
+        <div class="listenerList">
+            <span data-bind="foreach: listenerList">
+                <img class="listenerAvatar" data-bind="attr:{src: avatar}">
+            </span>
+            <span style="position: relative" data-bind="visible: listenerNum()>5">
+                <img class="moreListener" src="images/moreListener.png">
+                <div class="listenNum">+<span data-bind="text: listenerNum"></span></div>
+            </span>
+        </div>
+    </div>
+</section>
+<div class="downloadBg">
+    <img src="images/downloadImg.png">
+    <div class="title">下载问达APP</div>
+    <div class="more">体验更多内容</div>
+    <div class="btnDiv">
+        <span class="download" onclick="download()">下载</span>
+        <span class="cancel" onclick="cancel()">取消</span>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/pingpp.js"></script>
+<script type="text/javascript" src="../libs/util.js"></script>
+<script type="text/javascript" src="js/shareNote.js"></script>
+</html>

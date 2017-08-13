@@ -1,0 +1,99 @@
+html,body {
+    font-family: Helvetica;
+    background-color: white;
+    margin: 0px auto;
+    padding: 0.5rem;
+    color: #999999;
+    -webkit-user-select: none;
+}
+
+.infoDiv {
+    position: relative;
+}
+
+.titleText {
+    letter-spacing: 1px;
+    position: absolute;
+    font-size: 1.5rem;
+    color: #999999;
+    top: 1.1rem;
+    left: 1rem;
+}
+
+.titleNum {
+    position: absolute;
+    font-size: 1.2rem;
+    color: #666666;
+    top: 3rem;
+    left: 1rem;
+}
+
+.titleNum span {
+    font-size: 2.5rem;
+}
+
+.content {
+    position: absolute;
+    top: 9rem;
+    left: 1rem;
+}
+
+.contentText {
+    letter-spacing: 1px;
+    color: #999999;
+    font-size: 1rem;
+}
+
+.contentNum {
+    color: #666666;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.tip {
+    color: #666666;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-top: 1.9rem;
+}
+
+.tip img {
+    width: 2rem;
+    margin-right: 0.7rem;
+}
+
+#bodyMod {
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-iteration-count: 1;
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+    .content {
+        top: 8.5rem;
+    }
+    .contentNum {
+        margin-bottom: 0.5rem;
+    }
+    .tip {
+        margin-top: 0.8rem;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 1080px) {
+    html {
+        font-size: 16px;
+    }
+    .content {
+        top: 9.5rem;
+    }
+}

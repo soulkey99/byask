@@ -1,0 +1,84 @@
+{
+  "apps": [
+    {
+      "name": "ctapp",
+      "script": "app.js",
+      "cwd": "D:\\Workplace\\byask\\appServer",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "local"
+      },
+      "merge_logs": true,
+      "error_file": "D:\\Workplace\\byask\\public\\console.log",
+      "out_file": "D:\\Workplace\\byask\\public\\console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctfile",
+      "cwd": "D:\\Workplace\\byask\\fileServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "local"
+      },
+      "merge_logs": true,
+      "error_file": "D:\\Workplace\\byask\\public\\console.log",
+      "out_file": "D:\\Workplace\\byask\\public\\console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctmqtt",
+      "cwd": "D:\\Workplace\\byask\\mqttServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "local"
+      },
+      "merge_logs": true,
+      "error_file": "D:\\Workplace\\byask\\public\\console.log",
+      "out_file": "D:\\Workplace\\byask\\public\\console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctadmin",
+      "cwd": "D:\\Workplace\\byask\\adminServer",
+      "script": "app.js",
+      "watch": false,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "local"
+      },
+      "merge_logs": true,
+      "error_file": "D:\\Workplace\\byask\\public\\console.log",
+      "out_file": "D:\\Workplace\\byask\\public\\console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    }
+  ]
+}

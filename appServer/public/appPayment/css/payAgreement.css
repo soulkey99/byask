@@ -1,0 +1,90 @@
+html body {
+    font-family: "Microsoft YaHei",Tahoma,Arial,Roboto,¡±Droid Sans¡±,¡±Helvetica Neue¡±,¡±Droid Sans Fallback¡±,¡±Heiti SC¡±,¡±Hiragino Sans GB¡±,Simsun,sans-self;
+    background-color: #f8f8f8;
+    margin: 0px auto;
+    font-size: 16px;
+    overflow-y: scroll;
+}
+
+ul {
+    margin-bottom: 0px !important;
+}
+
+.ruleTitleDiv1 {
+    margin-top: 1rem;
+    height: 2.2rem;
+    padding-left: 0.5rem;
+}
+
+.ruleTitleDiv2 {
+    margin-top: 1rem;
+    height: 2.2rem;
+    padding-left: 0.5rem;
+    font-size: 1.1rem;
+    color: #666666;
+}
+
+.ruleTitleDiv3 {
+    margin-top: 0.5rem;
+    height: 1.2rem;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    color: #666666;
+}
+
+.ruleContent {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    color: #999999;
+    word-spacing:1px;
+    letter-spacing: 1px;
+}
+
+.ruleTitleText {
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+    color: #666666;
+}
+
+.line {
+    height: 1px;
+    background-color: #e1e1e1;
+    width: 96%;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.soulkey {
+    color: #666666;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+
+@media (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+    .ruleContent {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    html {
+        font-size: 15px;
+    }
+    .ruleContent {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 1080px) {
+    html {
+        font-size: 16px;
+    }
+    .ruleContent {
+        font-size: 0.9rem;
+    }
+}
+

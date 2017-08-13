@@ -1,0 +1,55 @@
+<div id="updateManager"><br>
+    <div class="row">
+        <div class="input-field col l1 s4">
+            <select id="platform">
+                <option value="">全部</option>
+                <option value="ios">苹果</option>
+                <option value="android">安卓</option>
+                <label>平台</label>
+            </select>
+        </div>
+        <div class="input-field col l3 s8">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadUpdateList()">检 索</a>
+            <a class="waves-effect waves-light btn" href="javascript:initAddUpdate()">添加更新</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>版本号</th>
+            <th>版本序号</th>
+            <th>平台</th>
+            <th>更新描述</th>
+            <th>更新时间</th>
+            <th>下载链接</th>
+            <th>是否启用</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: updateList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: version"></span></td>
+            <td align="center"><span data-bind="text: code"></span></td>
+            <td align="center"><span data-bind="text: platform"></span></td>
+            <td align="center"><span data-bind="text: desc"></span></td>
+            <td align="center"><span data-bind="text: time"></span></td>
+            <td align="center"><a data-bind="attr: {href: url}">点击下载</a></td>
+            <td align="center"><div class="switch"><label>Off<input type="checkbox" data-bind="attr: {checked: valid},click: setValid" ><span class="lever"></span>On</label></div></td>
+            <td align="center">
+                <a href="" class="btn" data-bind="click: initEditUpdate">编辑</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPageUpdate()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPosUpdate">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPageUpdate()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("systemManager/js/updateRecording.js");</script>

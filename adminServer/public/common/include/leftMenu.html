@@ -1,0 +1,85 @@
+<!-- 左侧菜单 START -->
+<div id="skin-select" ng-controller="leftmenuCtrl">
+    <div id="logo">
+        <h2 style="font-weight:bold;">后台管理<span>v1.0</span>&nbsp;</h2>
+    </div>
+    <a id="toggle">
+        <span class="entypo-menu"></span>
+    </a>
+    <div class="dark">
+        <form action="#">
+                <span>
+                    <input type="text" name="search" value="" class="search rounded id_search" placeholder="检索菜单..." autofocus="">
+                </span>
+        </form>
+    </div>
+    <div class="search-hover">
+        <form id="demo-2">
+            <input type="search" placeholder="检索菜单..." class="id_search">
+        </form>
+    </div>
+    <div class="skin-part">
+        <div id="tree-wrap">
+            <div class="side-bar">
+                <ul class="topnav menu-left-nest hidden" id="expertManager">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+                            <span class="">专家管理</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+                        </a>
+                    </li>
+                    <li id="expertAudit" class="hidden">
+                        <a class="tooltip-tip ajax-load" href="javascript:tabExpertAudit();" title="专家审核管理">
+                            <i class="entypo-user-add"></i>
+                            <span>专家审核管理</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="topnav menu-left-nest hidden" id="operationsManager">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+                            <span class="">运营管理</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+                        </a>
+                    </li>
+                    <li id="indexBanner" class="hidden">
+                        <a class="tooltip-tip ajax-load" href="javascript:tabIndexBanner()" title="首页Banner管理">
+                            <i class="fontawesome-picture"></i>
+                            <span>首页Banner管理</span>
+                        </a>
+                    </li>
+                    <li id="user" class="hidden">
+                        <a class="tooltip-tip ajax-load" href="javascript:tabUser()" title="用户管理">
+                            <i class="fontawesome-user"></i>
+                            <span>用户管理</span>
+                        </a>
+                    </li>
+                    <li id="userFeedback" class="hidden">
+                        <a class="tooltip-tip ajax-load" href="javascript:tabUserFeedback()" title="用户反馈管理">
+                            <i class="fontawesome-comment"></i>
+                            <span>用户反馈管理</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="topnav menu-left-nest hidden" id="systemManager">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+                            <span class="">系统管理</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+                        </a>
+                    </li>
+                    <li id="onlineConfig" class="hidden">
+                        <a class="tooltip-tip ajax-load" href="javascript:tabOnlineConfig()" title="在线参数管理">
+                            <i class="fontawesome-minus-sign"></i>
+                            <span>在线参数管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 左侧菜单 END -->
+<!-- 切换菜单脚本 START -->
+<script type="text/javascript" src="../common/include/js/leftMenu.js"></script>
+<!-- 切换菜单脚本 END -->

@@ -1,0 +1,453 @@
+a, input, div{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0px auto;
+    font-size: 16px;
+    line-height: 1.2rem;
+    background-color: #f2f4f7;
+}
+
+#body {
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-iteration-count: 1;
+}
+
+input,textarea {
+    border: 0px !important;
+    box-shadow: inset 0 0px 0px rgba(10,10,10,.1) !important;
+    color: #828b97 !important;
+    margin: 0 !important;
+    background-color:rgba(0,0,0,0);
+    padding: 0px !important;
+    font-size: 0.8rem !important;
+    height: 100% !important;
+    text-shadow: 0px 0px 0px #c6d1e0;
+    -webkit-text-fill-color: transparent;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    color: #A9A9A9;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+input[readonly] {
+    background-color: white;
+}
+
+textarea {
+    width: 100% !important;
+    box-shadow: inset 0 0px 0px rgba(10,10,10,0) !important;
+    border: 0px !important;
+    border-radius: 6px !important;
+    background-color:rgba(0,0,0,0) !important;
+    margin-bottom: 4%;
+    color: #c6d1e0 !important;
+    resize: none;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 2.5% 5% 2.5% 5%;
+    margin-bottom: 17%;
+}
+
+ul {
+    width: 100%;
+    padding: 5% 8% 0 9%;
+    color: #828b97;
+    list-style-position: inherit;
+    word-break: break-all;
+    font-size: 0.8rem;
+}
+
+.errorInfo {
+    font-size: 0.8rem;
+    color: #acb8c7;
+    padding: 0 5% 5% 5%;
+}
+
+.infoDiv {
+    width: 100%;
+    border-radius: 0.4rem;
+    background-color: white;
+    padding: 5% 5% 0 5%;
+    margin-bottom: 5%;
+}
+
+.title {
+    color: #535860;
+    font-size: 1rem;
+}
+
+.sign {
+    width: 20px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #4289ff;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.errorSign {
+    background-color: #f96363;
+}
+
+.inputDiv {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.selectRow {
+    margin: 4% 0 4% 0;
+}
+
+.selectY {
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 2rem;
+    background-color: #c6d1e0;
+    color: white;
+    margin-right: 0.5rem;
+    padding: 0.2rem 0 0.2rem 0;
+    margin-bottom: 1rem;
+}
+
+.pointDiv {
+    margin-top: 4%;
+}
+
+.pointClick {
+    display: inline-block;
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px #acb8c7 dashed;
+    color: #acb8c7;
+    font-size: 0.8rem;
+    padding: 5px 15px 5px 15px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    text-align: center;
+    max-width: 32%;
+}
+
+.pointSpan {
+    position: relative;
+}
+
+.pointSpan img {
+    visibility: hidden;
+    position: absolute;
+    width: 20px;
+    right: 12%;
+    top: -88%;
+}
+
+.pointClick input {
+    text-align: center;
+    height: 1.06rem !important;
+}
+
+.point {
+    display: inline-block;
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px #4289ff solid;
+    color: #4289ff;
+    font-size: 0.8rem;
+    padding: 5px 15px 5px 15px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    text-align: center;
+    margin-right: 2%;
+}
+
+.imgDiv {
+    width: 49%;
+    display: inline-block;
+    margin: 4% 0 0 0;
+}
+
+.imgHead {
+    width: 30%;
+    display: inline-block;
+    margin: 4% 0 2% 0;
+}
+
+.textDiv {
+    font-size: 0.8rem;
+    width: 49%;
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+    margin-bottom: 3.5%;
+    color: #acb8c7;
+}
+
+.headText {
+    font-size: 0.8rem;
+    width: 68%;
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+    margin-bottom: 3.5%;
+    color: #acb8c7;
+}
+
+.upload {
+    border-radius: 0.3rem;
+    background-color: #e8ecf1;
+    max-height: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    margin-bottom: 8%;
+}
+
+.uploadHead {
+    border-radius: 5rem;
+    background-color: #e8ecf1;
+    max-height: 5rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    margin-bottom: 8%;
+}
+
+.upload img {
+    width: 25%;
+}
+
+#headPhoto {
+    border-radius: 5rem;
+}
+
+.addImgDiv {
+    position: absolute;
+    z-index: 2000;
+    bottom: 2%;
+    width: 100%;
+    text-align: center;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    display: none;
+}
+
+.addImgBg {
+    position: absolute;
+    z-index: 1500;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    text-align: center;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    display: none;
+}
+
+.selectMethod {
+    background-color: white;
+    width: 92%;
+    height: 16%;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0px auto;
+}
+
+.photos, .albums {
+    height: 50%;
+    width: 100%;
+    color: #4289ff;
+    font-size: 1rem;
+    padding: 4% 0 4% 0;
+}
+
+.cancel {
+    background-color: white;
+    margin: 0px auto;
+    height: 8%;
+    width: 92%;
+    margin-top: 5%;
+    border-radius: 8px;
+    color: #4289ff;
+    font-size: 1rem;
+    padding: 4% 0 4% 0;
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #4289ff;
+    color: white;
+    font-size: 1.2rem;
+    position: absolute;
+    display: block;
+    bottom: 0px;
+}
+
+.state {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+    color: #999999;
+    z-index: 9999999;
+    display: none;
+}
+
+.priceNote {
+    color: #acb8c7;
+    font-size: 0.8rem;
+    line-height: 100%;
+    margin-top: 3%;
+}
+
+.category {
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 2rem;
+    background-color: #c6d1e0;
+    color: white;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0 0.2rem 0;
+    margin-bottom: 1rem;
+    float: left !important;
+    min-width: 30%;
+}
+
+.selectRowCategory {
+    margin: 4% 0 4% 0;
+    display: none;
+}
+
+.topicType {
+    background-color: #e8ecf1;
+    color: #acb8c7;
+    border-radius: 0.3rem;
+    min-height: 45px;
+    margin-bottom: 5%;
+    padding: 0 4% 0 4%;
+}
+
+.topicTitle {
+    font-size: 0.9rem;
+}
+
+.topicImg {
+    float: right;
+    width: 4%;
+    position: relative;
+    top: 40%;
+}
+
+.arrowRotateN {
+    -webkit-animation: arrowRotateN 0.3s forwards linear;
+}
+
+@-webkit-keyframes arrowRotateN {
+    0%{transform: rotate(90deg);}
+    100%{transform: rotate(0deg);}
+}
+
+.arrowRotateS {
+    -webkit-animation: arrowRotateS 0.3s forwards linear;
+}
+
+@-webkit-keyframes arrowRotateS {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(90deg);}
+}
+
+.selectedTypeDiv {
+    width: 100%;
+    display: table;
+    margin-top: 10px;
+}
+
+.expertType {
+    text-align: center;
+    font-size: 0.7rem;
+    border-radius: 2rem;
+    background-color: white;
+    color: #4289ff;
+    margin-right: 0.3rem;
+    padding: 0.1rem 0 0.1rem 0;
+    margin-bottom: 1rem;
+    float: left !important;
+    min-width: 30%;
+    border: 1px #4289ff solid;
+}
+
+.expertType img{
+    width: 9%;
+}
+
+.userAgreement {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    display: none;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+}
+
+.agreeContent {
+    width: 100%;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.btnDiv {
+    width: 100%;
+    height: 10%;
+    text-align: right;
+    padding: 15px 20px 0 0;
+}
+
+/*4 4s*/
+@media only screen and (device-height :480px) and (-webkit-device-pixel-ratio:2){
+    html {
+        font-size: 16px;
+    }
+}
+
+/* 兼容iphone5 */
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+    html {
+        font-size: 16px;
+    }
+}
+
+/*6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+    html {
+        font-size: 18px;
+    }
+}
+
+/*6+*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+    html {
+        font-size: 19px;
+    }
+}

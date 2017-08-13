@@ -1,0 +1,54 @@
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding-top: 4.4rem;
+    font-size: 1.1rem;
+    color: #4289ff;
+}
+
+header img {
+    width: 20%;
+    margin-bottom: 3%;
+}
+
+section {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    word-break: break-all;
+    font-size: 1rem;
+    color: #828b97;
+    padding: 0 10% 10% 10%;
+}
+
+/*4 4s*/
+@media only screen and (device-height :480px) and (-webkit-device-pixel-ratio:2){
+    html {
+        font-size: 16px;
+    }
+}
+
+/* 兼容iphone5 */
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+    html {
+        font-size: 16px;
+    }
+}
+
+/*6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+    html {
+        font-size: 18px;
+    }
+}
+
+/*6+*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){
+    html {
+        font-size: 19px;
+    }
+}

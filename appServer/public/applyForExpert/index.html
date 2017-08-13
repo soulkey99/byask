@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>达人申请</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/material-design-lite/1.1.3/material.min.css">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/jquery-confirm/2.5.1/jquery-confirm.min.css">
+    <link type="text/css" rel="stylesheet" href="css/applyForExpert.css">
+</head>
+<body style="visibility: hidden" id="body">
+    <header>
+        <img src="images/header.png">
+        <div id="errorNote">
+            <div class="sign errorSign" style="margin: 0 auto 5% auto"></div>
+            <ul data-bind="foreach: errorPointList"><li data-bind="text: $data"></li></ul>
+            <div class="errorInfo">请根据以上原因修改资料后重新提交</div>
+        </div>
+    </header>
+    <section>
+        <div class="infoDiv" id="nameDiv">
+            <div class="title">真实姓名</div>
+            <div class="sign" data-bind="css: {errorSign: name()==''&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><input type="text" id="name" placeholder="身份证/名片的姓名" data-bind="value: name, valueUpdate: 'keyup'"></div>
+        </div>
+        <div class="infoDiv" id="phoneDiv">
+            <div class="title">手机号码</div>
+            <div class="sign" data-bind="css: {errorSign: phone()==''&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><input type="text" id="phone" placeholder="常用手机号/工作手机号" data-bind="value: phone, valueUpdate: 'keyup'" readonly="readonly"></div>
+        </div>
+        <div class="infoDiv" id="cityDiv">
+            <div class="title">常驻城市</div>
+            <div class="sign" data-bind="css: {errorSign: city()==''&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><input type="text" id="city" placeholder="居住和工作的城市" data-bind="value: city, valueUpdate: 'keyup'"></div>
+        </div>
+        <div class="infoDiv" id="unitsDiv">
+            <div class="title">任职机构</div>
+            <div class="sign" data-bind="css: {errorSign: units()==''&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><input type="text" id="units" placeholder="所在工作单位" data-bind="value: units, valueUpdate: 'keyup'"></div>
+        </div>
+        <div class="infoDiv" id="jobDiv">
+            <div class="title">头衔/职位</div>
+            <div class="sign" data-bind="css: {errorSign: job()==''&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><input type="text" id="job" placeholder="工作职能描述" data-bind="value: job, valueUpdate: 'keyup'"></div>
+        </div>
+        <div class="infoDiv" id="tYearDiv">
+            <div class="title">工作年限</div>
+            <div class="sign" data-bind="css: {errorSign: tYear()==''&&checkSwitch}">&nbsp;</div>
+            <div class="row selectRow">
+                <div class="large-2 medium-2 small-2 columns selectY" onclick="changeBgColorYear(this)" data-bind="style: {backgroundColor: tYear()=='1-3年'?'#4289ff':'#c6d1e0'}">1-3年<input type="hidden" value="1-3年"></div>
+                <div class="large-2 medium-2 small-2 columns selectY" onclick="changeBgColorYear(this)" data-bind="style: {backgroundColor: tYear()=='3-6年'?'#4289ff':'#c6d1e0'}">3-6年<input type="hidden" value="3-6年"></div>
+                <div class="large-3 medium-3 small-3 columns selectY" onclick="changeBgColorYear(this)" data-bind="style: {backgroundColor: tYear()=='6-10年'?'#4289ff':'#c6d1e0'}">6-10年<input type="hidden" value="6-10年"></div>
+                <div class="large-3 medium-3 small-3 columns end selectY" onclick="changeBgColorYear(this)" data-bind="style: {backgroundColor: tYear()=='10年以上'?'#4289ff':'#c6d1e0'}">10年以上<input type="hidden" value="10年以上"></div>
+            </div>
+        </div>
+        <div class="infoDiv" id="introducedDiv">
+            <div class="title">自我介绍(至少80字)</div>
+            <div class="sign" data-bind="css: {errorSign: (introduced()==''||introduced().length<80)&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><textarea type="text" id="introduced" rows="7" placeholder="对自己进行简单的描述" data-bind="value: introduced, valueUpdate: 'keyup'"></textarea></div>
+        </div>
+        <div class="infoDiv" id="categoryDiv">
+            <div class="title">专家类别(最多选择7个)</div>
+            <div class="sign" data-bind="css: {errorSign: categoryList().length==0&&checkSwitch}">&nbsp;</div>
+            <!-- div class="selectedTypeDiv" data-bind="foreach: categoryList">
+                <div data-bind="text: subCategory.length"></div>
+                <div data-bind="foreach: subCategory">
+                    <div class="expertType"><span data-bind="text: $data"></span>&nbsp;&nbsp;<img src="images/delete1.png" data-bind="click: deleteType.bind($data, $parent.categoryName)"></div>
+                </div>
+            </div -->
+            <div class="selectedTypeDiv" data-bind="foreach: categorySelected">
+                <div class="expertType"><span data-bind="text: childName"></span>&nbsp;&nbsp;<img src="images/delete1.png" data-bind="click: deleteType"></div>
+            </div>
+            <div data-bind="foreach: topics" style="padding: 0% 0 2% 0">
+                <div class="topicType">
+                    <div style="height: 45px;line-height: 45px" onclick="showTopics(this)">
+                        <span class="topicTitle" data-bind="text: $data.name"></span>
+                        <img class="topicImg" src="images/rightArrow.png">
+                    </div>
+                    <div class="row selectRowCategory" data-bind="foreach: $data.list">
+                        <div class="category" onclick="changeBgColor(this)"><span data-bind="text: $data"></span><input type="hidden" data-bind="value: $data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoDiv" id="pointDiv">
+            <div class="title">特长标签<span style="color: #acb8c7;font-size: 0.8rem">(添加3个 标签字数2-6)</span></div>
+            <div class="sign" data-bind="css: {errorSign: (points().length<3 || pointsError)&&checkSwitch}">&nbsp;</div>
+            <span data-bind="foreach: points">
+                <span class="pointSpan" onclick="showDelete(this)">
+                    <span class="point" data-bind="text: $data"></span>
+                    <img src="images/delete.png" onclick="deletePoint(this)">
+                </span>
+            </span>
+            <span class="pointClick" data-bind="visible: points().length<3">
+                <input type="text" id="point" placeholder="添加标签" onblur="addPoint()">
+            </span>
+        </div>
+        <div class="infoDiv" id="priceDiv">
+            <div class="title">小纸条定价</div>
+            <div class="priceNote">小纸条是时长为60秒的简短语音回复，请填写一个合适的价格</div>
+            <div class="sign" data-bind="css: {errorSign: price()==''&&checkSwitch}">&nbsp;</div>
+            <div class="inputDiv"><input type="number" id="price" placeholder="小纸条定价单位：元,整数" data-bind="value: price, valueUpdate: 'keyup'" oninput="checkWithdrawalsNum(this)"></div>
+        </div>
+        <div class="infoDiv" id="cardDiv">
+            <div class="title">上传名片/工牌</div>
+            <div class="sign" data-bind="css: {errorSign: card()=='images/photo.png'&&checkSwitch}">&nbsp;</div>
+            <div class="imgDiv">
+                <div class="upload" onclick="showAddImg('card')">
+                    <img id="card" data-bind="attr: {src: card}">
+                </div>
+            </div>
+            <div class="textDiv">(支持jpg.png格式图片)</div>
+        </div>
+        <div class="infoDiv" id="photoDiv">
+            <div class="title">上传你的个性照片</div>
+            <div class="sign" data-bind="css: {errorSign: photo()=='images/photo.png'&&checkSwitch}">&nbsp;</div>
+            <div class="imgDiv">
+                <div class="upload" onclick="showAddImg('photo')">
+                    <img id="photo" data-bind="attr: {src: photo}">
+                </div>
+            </div>
+            <div class="textDiv">(支持jpg.png格式图片)</div>
+        </div>
+        <div class="infoDiv" id="headPhotoDiv">
+            <div class="title">上传专家头像</div>
+            <div class="sign" data-bind="css: {errorSign: headPhoto()=='images/photo.png'&&checkSwitch}">&nbsp;</div>
+            <div class="imgHead">
+                <div class="uploadHead" onclick="showAddImg('headPhoto')">
+                    <img id="headPhoto" data-bind="attr: {src: headPhoto}">
+                </div>
+            </div>
+            <div class="headText">(请选一张真实照片作为头像)</div>
+        </div>
+        <div id="protocolDiv" style="margin-bottom: 5%">
+            <img data-bind="attr: {src: agreeSrc}" style="width: 5%" onclick="agree()">&nbsp;<span style="font-size: 0.7rem;color: #828b97">已阅读并同意<a href="javascript:showAgreement()" style="font-size: 0.7rem;color: #4289ff">《问达App使用协议-达人版》</a></span>
+        </div>
+    </section>
+    <div class="addImgBg"></div>
+    <div class="addImgDiv">
+        <div class="selectMethod">
+            <div class="photos" onclick="addImgPhotos()" style="border-bottom: 1px #CCCCCC solid;">拍照</div>
+            <div class="albums" onclick="addImgAlbums()">从相册中选择</div>
+        </div>
+        <div class="cancel" onclick="hideAddImg()"><span style="line-height: inherit">取消</span></div>
+    </div>
+    <div class="state"><img src="images/pending.png" style="width: 100%"></div>
+    <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar" style="background-color: #f96363;height: 60px;line-height: 35px">
+        <div class="mdl-snackbar__text"></div>
+        <button type="button" class="mdl-snackbar__action"></button>
+    </div>
+    <footer ontouchstart="changeBgc(this,'#2e76ec')" ontouchend="changeBgc(this,'#4289ff')" onclick="subApply()">申请</footer>
+    <div class="userAgreement">
+        <div class="agreeContent"></div>
+        <div class="btnDiv">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="agree()">同意</button>&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="disagree()">不同意</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/Base64/1.0.0/base64.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/material-design-lite/1.1.3/material.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery-confirm/2.5.1/jquery-confirm.min.js"></script>
+<!-- script type="text/javascript" src="../libs/util.js"></script>
+<script type="text/javascript" src="js/applyForExpert.js"></script -->
+<script type="text/javascript" src="//callcall-server.oss-cn-beijing.aliyuncs.com/js/util.js"></script>
+<script type="text/javascript" src="//callcall-server.oss-cn-beijing.aliyuncs.com/js/applyForExpert.js"></script>
+</html>

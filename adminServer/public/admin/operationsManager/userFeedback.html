@@ -1,0 +1,19 @@
+<div id="userFeedbackManage">
+    <ul class="collection" data-bind="foreach: userFeedbackList">
+        <li class="collection-item avatar">
+            <img class="circle" data-bind="attr:{src: avatar}">
+            <span data-bind="text: nick"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span data-bind="text: time"></span>
+            <p><span class="title" data-bind="html: contentHtml"></span></p>
+            <a href="javascript:void(0)" data-bind="click: convenientReply" class="btn">回复</a>
+            <a href="javascript:void(0)" data-bind="click: showDetail" class="btn">查看历史反馈</a>
+        </li>
+    </ul>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPage()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPos">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPage()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/userFeedback.js");</script>

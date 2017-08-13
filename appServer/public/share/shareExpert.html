@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分享专家</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="css/shareExpert.css">
+</head>
+<body style="display: none">
+<header>
+    <img class="" src="images/headBg.png">
+    <img class="downloadBtn" src="images/downloadBtnOut.png" ontouchstart="changeBtn(this)" ontouchend="changeBtn(this)" onclick="download()">
+</header>
+<section>
+    <div class="expertAvatar"><img data-bind="attr:{src: avatar}"></div>
+    <div class="signX"></div>
+    <div class="expertName" data-bind="text: name"></div>
+    <div class="expertTitle" data-bind="text: title"></div>
+    <div class="expertTags" data-bind="foreach: major">
+        <span class="tag" data-bind="text: $data"></span>
+    </div>
+</section>
+<section>
+    <div class="menuTitle">
+        <span class="signY">&nbsp;</span>
+        <span class="title">我的私课</span>
+    </div>
+    <div class="topicDiv" data-bind="foreach: topics">
+        <div style="background-color: white;margin-bottom: 5%;">
+            <table>
+                <tr>
+                    <td width="93%"><div class="topicTitle" data-bind="text: title"></div></td>
+                    <td rowspan="2"><div class="topicRight" onclick="showMoreInfo(this)"><img src="images/rightArrow.png"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="topicPrice"><span class="priceSign">¥</span><span data-bind="text: price/100">499</span>/<span class="priceUnit">次</span></div></td>
+                </tr>
+            </table>
+            <div class="content" data-bind="text: description"></div>
+            <div class="reservationBtnDiv">
+                <div class="reservationBtn" ontouchstart="changeBgc(this,'#3b7be5')" ontouchend="changeBgc(this,'#4289ff')" onclick="isDownload()">立即预约</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="menuTitle">
+        <span class="signY">&nbsp;</span>
+        <span class="title">评论我的</span>
+    </div>
+    <div data-bind="foreach: comment">
+        <div class="comment">
+            <div class="commentInfo">
+                <div class="commentAvatar"><img data-bind="attr:{src:user_info.avatar}"></div>
+                <div class="commentName" data-bind="text: user_info.nick"></div>
+                <div class="commentTime" data-bind="text: util.convertTime2StrNew(commentAt)"></div>
+            </div>
+            <div class="commentContent" data-bind="text: comment"></div>
+            <div class="commentTopic">参与课题：<span data-bind="text: topic_info.title"></span></div>
+        </div>
+    </div>
+    <div id="btn1" class="moreBtn" onclick="showMoreComment()">查看更多</div>
+</section>
+<section>
+    <div class="menuTitle">
+        <span class="signY">&nbsp;</span>
+        <span class="title">专家资料</span>
+    </div>
+    <img class="expertBanner" data-bind="attr:{src:banner}">
+    <div class="expertInfo" data-bind="text: introShort"></div>
+    <div id="btn2" class="moreBtn" data-bind="visible: intro().length>100" onclick="showMoreIntro()">查看全部</div><br>
+</section>
+<div class="downloadBg">
+    <img src="images/downloadImg.png">
+    <div class="title">下载问达APP</div>
+    <div class="more">体验更多内容</div>
+    <div class="btnDiv">
+        <span class="download" onclick="download()">下载</span>
+        <span class="cancel" onclick="cancel()">取消</span>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../libs/util.js"></script>
+<script type="text/javascript" src="js/shareExpert.js"></script>
+</html>

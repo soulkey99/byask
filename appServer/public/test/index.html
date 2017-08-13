@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>问达微信demo</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div style="height: 2em;"></div>
+    <label>分享接口</label>
+    <div class="row">
+        <!--<div class="col-xs-3"></div>-->
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('share_circle')">朋友圈</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('share_friend')">微信好友</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('share_qq')">QQ</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('share_txwb')">腾讯微博</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('share_qzone')">QQ空间</button>
+        </div>
+        <!--<div class="col-xs-3"></div>-->
+    </div>
+    <div style="height: 3em; "></div>
+    <label>图像接口</label>
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('qqt')">拍照</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('qqs')">预览</button>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <div style="height: 3em; "></div>
+    <label>音频接口</label>
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('testt')">开始录音</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('tests')">停止录音</button>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <label>其他操作</label>
+    <div class="row">
+        <!--<div class="col-xs-3"></div>-->
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('hide_menu')">隐藏菜单</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('show_menu')">显示菜单</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('close_page')">关闭网页</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('scan')">扫一扫</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('show_location')">地理位置</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('show_map')">内置地图</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('show_network_status')">网络状态</button>
+        </div>
+        <!--<div class="col-xs-3"></div>-->
+    </div>
+    <div style="height: 3em; "></div>
+    <label>测试授权</label>
+    <div class="row">
+        <div class="col-xs-3">
+            <a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc935368aa45ca968&redirect_uri=https://api.test.iwenda.me/test/index.html&response_type=code&scope=snsapi_userinfo&state=snsapi_base#wechat_redirect'>
+                <button class="btn btn-primary text-center">授权页</button>
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc935368aa45ca968&redirect_uri=https://api.test.iwenda.me/test/index.html&response_type=code&scope=snsapi_base&state=snsapi_base#wechat_redirect'>
+                <button class="btn btn-primary text-center">base授权</button>
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('redirect_oauth')">授权重定向</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('redirect_oauth_base')">base重定向</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('download')">测试下载</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary text-center" onclick="on_click('qiniu')">测试七牛</button>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+</div>
+<div id="popup"
+     style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.75); position: fixed; left: 0; top: 0; display: none;">
+    <div style="height: 30px; width: 30px; position: fixed; top:1em; right: 2em; color: white">
+        <span style="width: 5em; height: 5em;" class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+    </div>
+    <div>
+        <div style="text-align: left; padding-left: 30%; padding-top: 15%; color: white">
+            <div>
+                <label>1.点击右上角按钮</label>
+            </div>
+            <div>
+                <label>2.选择“在浏览器中打开”</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        return (ua.match(/MicroMessenger/i) == "micromessenger");
+    }
+    function querystring(key) {
+        var re = new RegExp('(?:\\?|&)' + key + '=(.*?)(?=&|$)', 'gi');
+        var r = [], m;
+        while ((m = re.exec(document.location.search)) != null) r.push(m[1]);
+        return r[0];
+    }
+
+    function on_click(t) {
+//        if (!is_weixin()) {
+//            return alert('not in weixin!!!');
+//        }
+        switch (t) {
+            case 'share_circle':
+                wx.onMenuShareTimeline({
+                    title: '这里是分享标题', // 分享标题
+                    link: 'http://www.baidu.com/', // 分享链接
+                    imgUrl: 'http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=f278371e37d12f2eda08a6322eabbe07/c995d143ad4bd113fa64e1fb5bafa40f4afb0549.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('share circle confirmed.');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('share circle canceled.');
+                    }
+                });
+                break;
+            case 'share_friend':
+                wx.onMenuShareAppMessage({
+                    title: '这里是分享的标题', // 分享标题
+                    desc: '这里是分享的描述', // 分享描述
+                    link: 'http://www.baidu.com', // 分享链接
+                    imgUrl: 'http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=f278371e37d12f2eda08a6322eabbe07/c995d143ad4bd113fa64e1fb5bafa40f4afb0549.jpg', // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('share friend confirmed.');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('share friend canceled.');
+                    }
+                });
+                break;
+            case 'share_qq':
+                wx.onMenuShareQQ({
+                    title: '这里是分享的标题', // 分享标题
+                    desc: '这里是分享的描述', // 分享描述
+                    link: 'http://www.baidu.com', // 分享链接
+                    imgUrl: 'http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=f278371e37d12f2eda08a6322eabbe07/c995d143ad4bd113fa64e1fb5bafa40f4afb0549.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('share qq confirmed.');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('share qq canceled.');
+                    }
+                });
+                break;
+            case 'share_txwb':
+                wx.onMenuShareWeibo({
+                    title: '这里是分享的标题', // 分享标题
+                    desc: '这里是分享的描述', // 分享描述
+                    link: 'http://www.baidu.com', // 分享链接
+                    imgUrl: 'http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=f278371e37d12f2eda08a6322eabbe07/c995d143ad4bd113fa64e1fb5bafa40f4afb0549.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('share txwb confirmed.');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('share txwb canceled.');
+                    }
+                });
+                break;
+            case 'share_qzone':
+                wx.onMenuShareQZone({
+                    title: '这里是分享的标题', // 分享标题
+                    desc: '这里是分享的描述', // 分享描述
+                    link: 'http://www.baidu.com', // 分享链接
+                    imgUrl: 'http://b.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=f278371e37d12f2eda08a6322eabbe07/c995d143ad4bd113fa64e1fb5bafa40f4afb0549.jpg', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        alert('share qzone confirmed.');
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                        alert('share qzone canceled.');
+                    }
+                });
+                break;
+            case 'hide_menu':
+                wx.hideOptionMenu();
+                break;
+            case 'show_menu':
+                wx.showOptionMenu();
+                break;
+            case 'show_location':
+                wx.getLocation({
+                    type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                    success: function (res) {
+                        var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                        var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                        var speed = res.speed; // 速度，以米/每秒计
+                        var accuracy = res.accuracy; // 位置精度
+                        alert('lat: ' + latitude + ', lng: ' + longitude + 'spd: ' + speed + 'acc: ' + accuracy);
+                    }
+                });
+                break;
+            case 'close_page':
+                wx.closeWindow();
+                break;
+            case 'show_map':
+                wx.openLocation({
+                    latitude: 0, // 纬度，浮点数，范围为90 ~ -90
+                    longitude: 0, // 经度，浮点数，范围为180 ~ -180。
+                    name: 'test', // 位置名
+                    address: 'test desc', // 地址详情说明
+                    scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
+                    infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
+                });
+                break;
+            case 'scan':
+                wx.scanQRCode({
+                    needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                    scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                    success: function (res) {
+                        var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                        alert('scan result: ' + result);
+                    }
+                });
+                break;
+            case 'show_network_status':
+                wx.getNetworkType({
+                    success: function (res) {
+                        var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
+                        alert('network status: ' + networkType);
+                    }
+                });
+                break;
+            case 'oauth':
+                window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + app_id + '&redirect_uri=https://api.test.soulkey99.com/test/wx_redirect.html&response_type=code&scope=SCOPE&state=STATE&component_appid=component_appid#wechat_redirect';
+                break;
+            case 'download':
+                window.location.href = 'http://file.iwenda.me/soft/CallTalent_release_v1.0.0.apk';
+                break;
+            case 'qiniu':
+                window.location.href = 'http://qn.soulkey99.com/sktalent/2016-07-28/d69fbe54160c622bc880ccb70858a888.apk';
+                break;
+            case 'redirect_oauth':
+                window.location.href = '/rest/wx_redirect?scope=snsapi_userinfo';
+                break;
+            case 'redirect_oauth_base':
+                window.location.href = '/rest/wx_redirect?scope=snsapi_base';
+                break;
+            default:
+                alert('not implemented.');
+                break;
+        }
+    }
+    wx.ready(function () {
+//        alert('wx config ready.');
+    });
+    wx.error(function (res) {
+        console.log(JSON.stringify(res));
+    });
+    var app_id = '';
+
+    $(document).ready(function () {
+        if (querystring('code')) {
+            $.ajax({
+                type: 'GET',
+                async: true,
+                url: '/rest/wx_oauth?code=' + querystring('code'),
+                dataType: 'json',
+                success: function (data) {
+                    if (data.code == 900) {
+                        console.log(JSON.stringify(data.info));
+                    } else if (data.code == 914) {
+                        window.location.href = data.url;
+                    } else {
+                        console.log(data.msg);
+                    }
+                },
+                error: function (xhr, statusText, error) {
+                    if (xhr.status == 301 || xhr.status == 302) {
+                        window.location.href = '';
+                    }
+                }
+            });
+        }
+        $.ajax({
+            type: 'GET',
+            async: true,
+            url: '/rest/wx_js_config?url=' + encodeURIComponent(window.location.href),
+            dataType: 'json',
+            success: function (data) {
+                if (data.code == 900) {
+                    app_id = data.app_id;
+                    wx.config({
+                        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: data.appId, // 必填，公众号的唯一标识
+                        timestamp: data.timestamp, // 必填，生成签名的时间戳
+                        nonceStr: data.nonceStr, // 必填，生成签名的随机串
+                        signature: data.signature,// 必填，签名，见附录1
+//                        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+                        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice', 'chooseImage', 'previewImage', 'uploadImage', 'downloadImage', 'translateVoice', 'getNetworkType', 'openLocation', 'getLocation', 'hideOptionMenu', 'showOptionMenu', 'hideMenuItems', 'showMenuItems', 'hideAllNonBaseMenuItem', 'showAllNonBaseMenuItem', 'closeWindow', 'scanQRCode', 'chooseWXPay', 'openProductSpecificView', 'addCard', 'chooseCard', 'openCard',] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    });
+                }
+            },
+            error: function (jqXHR) {
+                alert('fetch config err: ' + jqXHR.responseJSON);
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

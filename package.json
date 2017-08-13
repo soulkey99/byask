@@ -1,0 +1,63 @@
+{
+  "name": "byask",
+  "version": "1.0.0",
+  "description": "by ask server",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.soulkey99.com:menglei/byask.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ask",
+    "server"
+  ],
+  "author": "demo",
+  "license": "ISC",
+  "dependencies": {
+    "aliyun-sdk": "^1.9.1",
+    "bagpipe": "^0.3.5",
+    "bluebird": "^3.4.0",
+    "co": "^4.6.0",
+    "co-busboy": "^1.3.1",
+    "co-fs-extra": "^1.2.1",
+    "co-wechat-api": "^2.4.2",
+    "content-type": "^1.0.2",
+    "cron": "^1.1.0",
+    "eventproxy": "^0.3.4",
+    "express": "^4.13.4",
+    "fs-extra": "^0.30.0",
+    "hat": "0.0.3",
+    "ip": "^1.1.3",
+    "is-webp": "^1.0.0",
+    "koa": "^1.2.0",
+    "koa-body": "^1.4.0",
+    "koa-bodyparser": "^2.2.0",
+    "koa-generic-session": "^1.11.1",
+    "koa-logger": "^1.3.0",
+    "koa-multer": "^1.0.0",
+    "koa-redis": "^2.1.1",
+    "koa-router": "^5.4.0",
+    "koa-session-redis": "^1.1.0",
+    "koa-session-redis3": "^1.3.3",
+    "koa-static": "^2.0.0",
+    "koa-xml-body": "^1.0.3",
+    "log4js": "^0.6.36",
+    "mongoose": "^4.4.19",
+    "mqtt": "^1.12.0",
+    "pingpp": "^2.0.7",
+    "qiniu": "^6.1.11",
+    "read-chunk": "^2.0.0",
+    "redis": "^2.6.1",
+    "redis-commands": "^1.2.0",
+    "request": "^2.72.0",
+    "then-redis": "^2.0.1",
+    "thunkify": "^2.1.2",
+    "umeng": "^0.1.3",
+    "validator": "^5.3.0",
+    "webpconv": "^1.0.3",
+    "wechat-api": "^1.28.0"
+  }
+}

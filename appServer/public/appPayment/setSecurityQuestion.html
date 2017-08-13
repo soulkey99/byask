@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>设置安全问题</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="//cdn.bootcss.com/hover.css/2.0.2/css/hover-min.css">
+    <link type="text/css" rel="stylesheet" href="css/setSecurityQuestion.css">
+</head>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/foundation/6.1.1/foundation.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script type="text/javascript" src="../libs/util.js"></script>
+<script type="text/javascript" src="js/setSecurityQuestion.js"></script>
+<body style="visibility: hidden">
+    <div class="main">
+        <div class="row"><div class="large-12 medium-12 small-12 titleB">设置安全问题</div></div>
+        <div class="row"><div class="large-12 medium-12 small-12 titleS">安全问题将用于找回和修改你的交易密码</div></div>
+        <div class="row">
+            <div class="large-12 medium-12 small-12 questionDiv">
+                <div><img class="questionNum" src="images/one.png"></div><div class="questionText">对您影响最大的人名字是？</div>
+            </div>
+            <div class="large-12 medium-12 small-12 hvr-underline-from-left">
+                <input type="text" id="question1" placeholder="填写答案" autofocus="autofocus" data-bind="value: question1, valueUpdate: 'afterkeydown'">
+            </div>
+            <div class="large-12 medium-12 small-12 questionDiv">
+                <div><img class="questionNum" src="images/two.png"></div><div class="questionText">您最熟悉的童年好友名字是？</div>
+            </div>
+            <div class="large-12 medium-12 small-12 hvr-underline-from-left">
+                <input type="text" id="question2" placeholder="填写答案" data-bind="value: question2, valueUpdate: 'afterkeydown'">
+            </div>
+            <div class="large-12 medium-12 small-12 questionDiv">
+                <div><img class="questionNum" src="images/three.png"></div><div class="questionText">您小学班主任的名字是？</div>
+            </div>
+            <div class="large-12 medium-12 small-12 hvr-underline-from-left">
+                <input type="text" id="question3" placeholder="填写答案" data-bind="value: question3, valueUpdate: 'afterkeydown'">
+            </div>
+        </div>
+    </div>
+    <div class="subBtn" ontouchstart="setBgColorIn(this)" ontouchend="setBgColorOut(this)" onclick="subQuestions()" data-bind="visible: question1()!=''&&question2()!=''&&question3()!=''">提交</div>
+</body>
+</html>

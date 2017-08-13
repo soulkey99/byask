@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>关于我们</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+</head>
+<body style="display: none">
+<header>
+    <img src="images/logo.png">
+    <div>问达<span id="version">1.0</span></div>
+</header>
+<section>
+    <p>「问达」是一个有深度的线上知识与技能共享交流平台。汇聚众多各行业领域的专家达人，为创业者、职场新人提供交流学习的机会，提升他们相关专业知识与技能，改变他们的工作与生活。</p>
+    <p>「问达」充分利用分享经济的理念，让每个人的知识技能都各尽所能，从而帮助到更多的人。从现在开始,当你遇到相关领域的问题或是有个性化的服务需求,都可以在问达直接找到相对应的专家达人，一对一为你答疑解惑。</p>
+    <p>「问达」相信: 工作与生活中的种种未知并不会停止我们的进步，因为命运的轨迹充满了交点与连线，你发出的呼唤与渴求，他人会力所能及的伸出援手。</p>
+</section>
+</body>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    var reg = new RegExp("(^|&)version=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    var version = "";
+    if(result != null){
+        version = decodeURIComponent(result[2])
+    }
+    $("#version").text(version);
+    $(document).ready(function(){
+        $("header").css("height",$(window).height()*0.4 + "px");
+        $("section").css("height",$(window).height()*0.57 + "px");
+        $("body").css("display","block");
+    });
+</script>
+</html>

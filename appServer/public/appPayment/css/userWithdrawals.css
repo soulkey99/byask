@@ -1,0 +1,147 @@
+html,body {
+    font-family: Helvetica;
+    background-color: #fafafa;
+    margin: 0px auto;
+    color: #999999;
+    -webkit-user-select: none;
+    overflow-y: hidden;
+}
+
+.infoDiv {
+    position: relative;
+}
+
+.row {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.userNick {
+    position: absolute;
+    color: #ffffff;
+    left: 1rem;
+    top: 1rem;
+    font-size: 1.1rem;
+}
+
+.userName {
+    position: absolute;
+    color: #cddef1;
+    left: 1rem;
+    top: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.note {
+    padding: 1rem 0 0 0;
+}
+
+.numberDiv {
+    border-top: 1px #e1e1e1 solid;
+    border-bottom: 1px #e1e1e1 solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    background-color: #ffffff;
+    padding: 0 1rem 0 1rem;
+}
+
+.column, .columns {
+    padding: 0px !important;
+}
+
+.subBtn {
+    vertical-align: middle;
+    height: 2.8rem;
+    line-height: 2.85rem;
+    border-radius: 25px;
+    background-color: #449de2;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 2px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.balance {
+    font-size: 1.1rem;
+    color: #449de2;
+}
+
+input {
+    border: 0px !important;
+    box-shadow: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    color: #449de2 !important;
+    font-size: 1rem !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+table {
+    border-collapse: inherit;
+}
+
+tr {
+    background-color: #fafafa !important;
+}
+
+td {
+    padding-top: 0px !important;
+    padding-bottom: 0.8rem !important;
+    padding-right: 0px !important;
+    font-size: 0.9rem;
+}
+
+.borderLeft {
+    border-left: 4px #449de2 solid;
+    vertical-align: top;
+    border-radius: 5px
+}
+
+#bodyMod {
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-iteration-count: 1;
+}
+
+.errorNote {
+    font-size: 0.8rem;
+    height: 3rem;
+    line-height: 3.7rem;
+    text-align: right;
+}
+
+.errorNote img {
+    width: 7%;
+}
+
+.errorNote span {
+    vertical-align: middle;
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+    input {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 1080px) {
+    html {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>完成设置</title>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <style>
+        html,body {
+            font-family: "Microsoft YaHei",Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,”Hiragino Sans GB”,Simsun,sans-self;
+            background-color: #439de2;
+            margin: 0px auto;
+            color: #ffffff;
+            text-align: center;
+            overflow-y: hidden;
+        }
+        img {
+            width: 4rem;
+        }
+        #finishImg {
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-delay: 0.1s;
+            -webkit-animation-iteration-count: 1;
+        }
+        #finishText {
+            -webkit-animation-duration: 1s;
+            -webkit-animation-delay: 0.1s;
+            -webkit-animation-iteration-count: 1;
+        }
+    </style>
+</head>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/foundation/6.1.1/foundation.min.js"></script>
+<body>
+    <div id="imgDiv">
+        <div><img id="finishImg"></div>
+        <div id="finishText" style="margin-top: 0.5rem"></div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("body").css("paddingTop",($(window).height()-$("#imgDiv").height()*5)/2 + "px");
+        $("#finishImg").attr("src","images/finish.png");
+        $("#finishImg").addClass("animated bounceInUp");
+        $("#finishText").text("完成设置");
+        $("#finishText").addClass("animated fadeIn");
+        setTimeout(function(){
+            window.location.href = "/appPayment/bindingResult.html";
+        },1000);
+    });
+</script>
+</html>

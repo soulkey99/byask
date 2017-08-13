@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta charset="utf-8">
+    <title>索课科技</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="text/css" href="../common/assets/ico/minus.png">
+    <link rel="stylesheet" type="text/css" href="../common/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/css/loader-style.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/js/confirm/css/jquery-confirm.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/js/cropper/css/cropper.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/js/cropper/css/docs.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/css/extra-pages.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/js/footable/css/footable-demos.css">
+    <link rel="stylesheet" type="text/css" href="../common/assets/js/css3loader/css/loaders.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/jquery-tagsinput/1.3.6/jquery.tagsinput.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap-select/2.0.0-beta1/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/toastr.js/2.1.2/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <!-- script type="text/javascript" src="//cdn.bootcss.com/modernizr/2.8.3/modernizr.min.js"></script 检测是否支持html5和css3属性 -->
+</head>
+<body>
+    <div id="panel"></div>
+    <div id="leftMenu"></div>
+    <!-- 页面主体 START -->
+    <div class="wrap-fluid" style="margin-left: 0px !important;">
+        <div class="container-fluid paper-wrap bevel tlbr">
+            <!-- 标题栏 START -->
+            <div class="row">
+                <div id="paper-top">
+                    <div class="col-lg-3">
+                        <h2 class="tittle-content-header">
+                            <i class="icon icon-view-thumb"></i>
+                            <span id="h2Title"></span>
+                        </h2>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="devider-vertical visible-lg"></div>
+                        <div class="tittle-middle-header">
+                            <div class="alert" style="margin: 5px 0px 5px 0px">
+                                <!-- button type="button" class="close" data-dismiss="alert">×</button -->
+                                <span class="tittle-alert entypo-info-circled"></span>欢迎回来,&nbsp;<span id="nick"></span><span>&nbsp;您上次登录时间：</span><span id="lastLoginTime"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 标题栏 END -->
+            <!-- 面包屑导航 START -->
+            <ul id="breadcrumb"></ul>
+            <!-- 面包屑导航 END -->
+            <!-- 页面正文 START -->
+            <div class="nest" id="elementClose">
+                <div class="body-nest" id="element"></div>
+            </div>
+            <!-- 页面正文 END -->
+        </div>
+    </div>
+    <!-- 页面主体 END -->
+    <footer></footer>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../libs/util.js"></script>
+    <script>
+        if(window.jQuery == undefined){
+            window.location.href = "../500.html";
+        }
+        $("footer").load("../common/include/footer.html");
+        $("#panel").load("../common/include/panel.html");
+        $("#leftMenu").load("../common/include/leftMenu.html");
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/highcharts/4.1.10/highcharts.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/bootstrap-select/2.0.0-beta1/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/moment.js/2.10.6/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/moment.js/2.10.6/locale/zh-cn.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/toastr.js/2.1.2/toastr.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery-tagsinput/1.3.6/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/toastr.js/2.1.2/toastr.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/Base64/1.0.0/base64.min.js"></script>
+    <script type="text/javascript" src="../common/assets/js/app.js"></script>
+    <script type="text/javascript" src="../common/assets/js/load.js"></script>
+    <script type="text/javascript" src="../common/assets/js/main.js"></script>
+    <script type="text/javascript" src="../common/assets/js/confirm/js/jquery-confirm.js"></script>
+    <script type="text/javascript" src="../common/assets/js/jhere-custom.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</body>
+</html>

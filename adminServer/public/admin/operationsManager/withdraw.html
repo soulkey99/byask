@@ -1,0 +1,62 @@
+<div id="withdrawManager"><br>
+    <div class="row">
+        <div class="input-field col l1 s6">
+            <input id="startTime" type="text">
+            <label for="startTime">开始时间</label>
+        </div>
+        <div class="input-field col l1 s6">
+            <input id="endTime" type="text">
+            <label for="endTime">结束时间</label>
+        </div>
+        <div class="input-field col l1 s4">
+            <input id="phone" type="text">
+            <label for="phone">用户联系电话</label>
+        </div>
+        <div class="input-field col l1 s4">
+            <select id="status">
+                <option value="" selected>全部</option>
+                <option value="pending">进行中</option>
+                <option value="paid">已支付</option>
+                <option value="fail">支付失败</option>
+                <label>提现状态</label>
+            </select>
+        </div>
+        <div class="input-field col l3 s4">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadWithdrawList()">检 索</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th style="width: 100px">状态</th>
+            <th>专家姓名/用户昵称</th>
+            <th>金额</th>
+            <th>创建时间</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: withdrawList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center">
+                <span data-bind="visible: status!='pending',text: status=='pending'?'进行中':status=='paid'?'提现成功':'提现失败'"></span>
+                <span data-bind="visible: status=='pending'"><select data-bind="options: statusOptions, optionsText: 'text', optionsValue: 'value', value: status, event:{change: changeStatus}"></select></span>
+            </td>
+            <td align="center"><span data-bind="text: expert_status=='verified'?expert_info.name:user_info.nick"></span></td>
+            <td align="center"><span data-bind="text: amount/100"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(createdAt)"></span></td>
+            <td align="center"><span data-bind="text: remark"></span></td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPageWithdraw()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPosWithdraw">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPageWithdraw()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/withdraw.js");</script>

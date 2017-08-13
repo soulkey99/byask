@@ -1,0 +1,53 @@
+<div id="indexClassificationMain"><br>
+    <div class="row">
+        <div class="input-field col l1 s4">
+            <select id="valid">
+                <option value="" selected>全部</option>
+                <option value="true">有效</option>
+                <option value="false">无效</option>
+                <label>是/否有效</label>
+            </select>
+        </div>
+        <div class="input-field col l3 s8">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadIndexClassificationList()">检 索</a>
+            <a class="waves-effect waves-light btn" href="javascript:initAddClassification()">添加主分类</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th align="center">序号</th>
+            <th align="center">分类名称</th>
+            <th align="center">横幅图片</th>
+            <th align="center">分类图片</th>
+            <th align="center">顺序</th>
+            <th align="center">备注</th>
+            <th align="center">是/否有效</th>
+            <th align="center">操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: indexClassificationList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: categoryName"></span></td>
+            <td align="center"><a href="javascript:void(0);" onclick="showSrcImg(this)"><img class="img-responsive" style="max-width: 80px;max-height: 42px" data-bind="attr:{src: order_banner}"></a></td>
+            <td align="center"><a href="javascript:void(0);" onclick="showSrcImg(this)"><img class="img-responsive" style="max-width: 80px;max-height: 42px" data-bind="attr:{src: img}"></a></td>
+            <td align="center"><span data-bind="text: seq"></span></td>
+            <td align="center"><span data-bind="text: desc"></span></td>
+            <td align="center"><div class="switch"><label>Off<input type="checkbox" data-bind="attr: {checked: valid},click: setValid" ><span class="lever"></span>On</label></div></td>
+            <td align="center">
+                <a href="" class='waves-effect waves-light btn' data-bind="click: initEditClassification">编辑分类</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="#!" data-bind="click:prevPage"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPos">1</a></li>
+            <li class="waves-effect"><a href="#!" data-bind="click:nextPage"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/indexClassification.js");</script>

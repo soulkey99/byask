@@ -1,0 +1,84 @@
+{
+  "apps": [
+    {
+      "name": "ctapp",
+      "script": "app.js",
+      "cwd": "/home/being/byask/appServer",
+      "watch": true,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctfile",
+      "cwd": "/home/being/byask/fileServer",
+      "script": "app.js",
+      "watch": true,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctmqtt",
+      "cwd": "/home/being/byask/mqttServer",
+      "script": "app.js",
+      "watch": true,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    },
+    {
+      "name": "ctadmin",
+      "cwd": "/home/being/byask/adminServer",
+      "script": "app.js",
+      "watch": true,
+      "ignore_watch": [
+        "public"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "merge_logs": true,
+      "error_file": "/home/being/byask/public/console.log",
+      "out_file": "/home/being/byask/public/console.log",
+      "instance": 1,
+      "max_restarts": 0,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "exec_interpreter": "node"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<div id="logManager"><br>
+    <div class="row">
+        <div class="input-field col l1">
+            <input id="phone" type="text">
+            <label for="phone" class="">手机号码</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="imei" type="text">
+            <label for="imei" class="">手机imei码</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="mac" type="text">
+            <label for="mac" class="">手机mac地址</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="ip" type="text">
+            <label for="ip" class="">请求ip地址</label>
+        </div>
+        <div class="input-field col l1">
+            <select id="platform">
+                <option value="" selected>全部</option>
+                <option value="android">安卓</option>
+                <option value="ios">苹果</option>
+                <option value="admin">管理平台</option>
+                <label>操作系统类型</label>
+            </select>
+        </div>
+        <div class="input-field col l1">
+            <select id="action">
+                <option value="" selected>全部</option>
+                <option value="login">登陆</option>
+                <option value="register">注册</option>
+                <option value="autoLogin">自动登陆</option>
+                <option value="ssoLogin">第三方登录</option>
+                <option value="logout">注销登陆</option>
+                <option value="addblack">添加黑名单</option>
+                <option value="removeblack">移除黑名单</option>
+                <label>操作类型</label>
+            </select>
+        </div>
+        <div class="input-field col l1">
+            <input id="client" type="text">
+            <label for="client" class="">版本号</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="channel" type="text">
+            <label for="channel" class="">渠道号</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="startAt" type="text">
+            <label for="startAt">开始时间</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="endAt" type="text">
+            <label for="endAt">结束时间</label>
+        </div>
+        <div class="input-field col l1">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadLogList()">检 索</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>昵称</th>
+            <th>手机号</th>
+            <th>用户类型</th>
+            <th>操作类型</th>
+            <th>加黑原因</th>
+            <th>操作时间</th>
+            <th>手机imei码</th>
+            <th>手机mac地址</th>
+            <th>请求ip地址</th>
+            <th>操作系统类型</th>
+            <th>版本号</th>
+            <th>渠道号</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: logList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: name"></span></td>
+            <td align="center"><span data-bind="text: nick"></span></td>
+            <td align="center"><span data-bind="text: phone"></span></td>
+            <td align="center"><span data-bind="text: expert_status=='verified'?'专家':'普通用户'"></span></td>
+            <td align="center"><span data-bind="text: action=='login'?'登陆':action=='register'?'注册':action=='autoLogin'?'自动登陆':action=='ssoLogin'?'第三方登录':action=='logout'?'注销登陆':action=='addblack'?'添加黑名单':'移除黑名单'"></span></td>
+            <td align="center"><span data-bind="text: content.desc==(''||undefined)?'暂无':content.desc"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(createdAt)"></span></td>
+            <td align="center"><span data-bind="text: content.imei==(''||undefined)?'暂无':content.imei"></span></td>
+            <td align="center"><span data-bind="text: content.mac==(''||undefined)?'暂无':content.mac"></span></td>
+            <td align="center"><span data-bind="text: content.ip==(''||undefined)?'暂无':content.ip"></span></td>
+            <td align="center"><span data-bind="text: content.platform==(''||undefined)?'暂无':content.platform"></span></td>
+            <td align="center"><span data-bind="text: content.client==(''||undefined)?'暂无':content.client"></span></td>
+            <td align="center"><span data-bind="text: content.channel==(''||undefined)?'暂无':content.channel"></span></td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPageLog()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPosLog">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPageLog()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/usersLog.js");</script>

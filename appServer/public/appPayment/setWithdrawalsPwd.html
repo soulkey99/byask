@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>输入交易密码</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/foundation/6.1.1/foundation.min.css"/>
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="//cdn.bootcss.com/hover.css/2.0.2/css/hover-min.css">
+    <link type="text/css" rel="stylesheet" href="css/setWithdrawalsPwd.css">
+</head>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/knockout/3.3.0/knockout-min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/foundation/6.1.1/foundation.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script type="text/javascript" src="../libs/util.js"></script>
+<script type="text/javascript" src="js/setWithdrawalsPwd.js"></script>
+<body style="visibility: hidden">
+    <div class="main">
+        <div class="large-12 medium-12 small-12 pwdTitleDiv">
+            <div class="pwdTitleB">请输入6位交易密码</div>
+        </div>
+        <div class="large-12 medium-12 small-12 pwd" id="pwd">
+            <div class="large-2 medium-2 small-2 column" align="center">
+                <div name="pwdTextDiv" class="pwdTextDivOut"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 column" align="center">
+                <div name="pwdTextDiv" class="pwdTextDivOut"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 column" align="center">
+                <div name="pwdTextDiv" class="pwdTextDivOut"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 column" align="center">
+                <div name="pwdTextDiv" class="pwdTextDivOut"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 column" align="center">
+                <div name="pwdTextDiv" class="pwdTextDivOut"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 column" align="center">
+                <div name="pwdTextDiv" class="pwdTextDivOut"></div>
+            </div>
+        </div>
+        <div class="large-12 medium-12 small-12 pwdNum" id="pwdNum">
+            <div class="row" style="border-bottom: 1px #8c8c8c solid">
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,1)" ontouchend="setNumBgColorOut(this)">1</div>
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,2)" ontouchend="setNumBgColorOut(this)">2</div>
+                <div class="large-4 medium-4 small-4 column" style="height: 100%;" ontouchstart="setNumBgColorIn(this,3)" ontouchend="setNumBgColorOut(this)">3</div>
+            </div>
+            <div class="row" style="border-bottom: 1px #8c8c8c solid">
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,4)" ontouchend="setNumBgColorOut(this)">4</div>
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,5)" ontouchend="setNumBgColorOut(this)">5</div>
+                <div class="large-4 medium-4 small-4 column" style="height: 100%;" ontouchstart="setNumBgColorIn(this,6)" ontouchend="setNumBgColorOut(this)">6</div>
+            </div>
+            <div class="row" style="border-bottom: 1px #8c8c8c solid">
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,7)" ontouchend="setNumBgColorOut(this)">7</div>
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,8)" ontouchend="setNumBgColorOut(this)">8</div>
+                <div class="large-4 medium-4 small-4 column" style="height: 100%;" ontouchstart="setNumBgColorIn(this,9)" ontouchend="setNumBgColorOut(this)">9</div>
+            </div>
+            <div class="row">
+                <div class="large-4 medium-4 small-4 column" style="background-color: #d1d5da;border-right: 1px #8c8c8c solid;height: 100%;"></div>
+                <div class="large-4 medium-4 small-4 column" style="border-right: 1px #8c8c8c solid;height: 100%;" ontouchstart="setNumBgColorIn(this,0)" ontouchend="setNumBgColorOut(this)">0</div>
+                <div class="large-4 medium-4 small-4 column" style="background-color: #d1d5da;height: 100%;" ontouchstart="setDoBgColorIn(this)" ontouchend="setDoBgColorOut(this)"><img src="images/remOut.png"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

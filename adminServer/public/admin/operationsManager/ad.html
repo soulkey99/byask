@@ -1,0 +1,80 @@
+<div id="adMain"><br>
+    <div class="row">
+        <div class="input-field col l1 s6">
+            <select id="type">
+                <option value="" selected>广告类型</option>
+                <option value="splash">闪屏页</option>
+                <option value="banner">首页banner位</option>
+                <option value="homePop">首页弹出广告位</option>
+                <option value="homeHide">首页弹出广告位(隐藏)</option>
+            </select>
+        </div>
+        <div class="input-field col l1 s6">
+            <select id="platform">
+                <option value="" selected>操作系统</option>
+                <option value="android">安卓</option>
+                <option value="ios">苹果</option>
+            </select>
+        </div>
+        <div class="input-field col l1 s4">
+            <select id="valid">
+                <option value="" selected>是/否有效</option>
+                <option value="true">有效</option>
+                <option value="false">无效</option>
+            </select>
+        </div>
+        <div class="input-field col l3 s8">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadAdList()">检 索</a>
+            <a class="waves-effect waves-light btn" href="javascript:initAddAd()">添加广告</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th align="center" class="mdl-data-table__cell--non-numeric">序号</th>
+            <th align="center">创建时间</th>
+            <th align="center">生效时间</th>
+            <th align="center">失效时间</th>
+            <th align="center">广告图片</th>
+            <th align="center">广告类型</th>
+            <th align="center">链接类型</th>
+            <th align="center">广告链接</th>
+            <th align="center">广告文本</th>
+            <th align="center">显示平台</th>
+            <th align="center">排序</th>
+            <th align="center" class="col-lg-2">备注</th>
+            <th align="center">是/否生效</th>
+            <th align="center">操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: adList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(createdAt)"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(startAt)"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(endAt)"></span></td>
+            <td align="center"><a href="javascript:void(0);" data-bind="click: showSrcImg"><img class="img-responsive" style="max-width: 80px;max-height: 42px" data-bind="attr:{src: content.img}"></a></td>
+            <td align="center"><span data-bind="text: type=='banner'?'首页banner位':type=='splash'?'闪屏页':type=='homePop'?'首页弹出广告位':'首页弹出广告位(隐藏)'"></span></td>
+            <td align="center"><span data-bind="text: content.type"></span></td>
+            <td align="center"><a data-bind="attr: {href: content.dest}" target="_blank">点击查看链接</a></td>
+            <td align="center"><span data-bind="text: content.text"></span></td>
+            <td align="center"><span data-bind="text: resolution==''?platform:platform+'('+resolution+')'"></span></td>
+            <td align="center"><span data-bind="text: seq"></span></td>
+            <td align="center"><span data-bind="text: remark"></span></td>
+            <td align="center"><div class="switch"><label>Off<input type="checkbox" data-bind="attr: {checked: valid},click: setValid" ><span class="lever"></span>On</label></div></td>
+            <td align="center">
+                <a href="" class='waves-effect waves-light btn' data-bind="click: initEditAd">编辑</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="#!" data-bind="click:prevPage"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPos">1</a></li>
+            <li class="waves-effect"><a href="#!" data-bind="click:nextPage"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/ad.js");</script>

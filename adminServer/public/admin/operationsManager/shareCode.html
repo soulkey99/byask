@@ -1,0 +1,57 @@
+<div id="shareCodeManager"><br>
+    <div class="row">
+        <div class="input-field col l1 s6">
+            <input id="startTime" type="text">
+            <label for="startTime">开始时间</label>
+        </div>
+        <div class="input-field col l1 s6">
+            <input id="endTime" type="text">
+            <label for="endTime">结束时间</label>
+        </div>
+        <div class="input-field col l1 s4">
+            <input id="key" type="text">
+            <label for="key">关键字</label>
+        </div>
+        <div class="input-field col l3 s8">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadShareCodeList()">检 索</a>
+            <a class="waves-effect waves-light btn" href="javascript:initAddShareCode()">创建分享码</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>分享码</th>
+            <th>描述</th>
+            <th>推广人数</th>
+            <th>推广并注册人数</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: shareCodeList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><span data-bind="text: shareCode"></span></td>
+            <td align="center"><span data-bind="text: desc"></span></td>
+            <td align="center"><span data-bind="text: $data.new"></span></td>
+            <td align="center"><span data-bind="text: reg"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(createdAt)"></span></td>
+            <td align="center">
+                <a href="" class='waves-effect waves-light btn' data-bind="click: initEditShareCode">编辑</a>
+                <a href="" class='waves-effect waves-light btn' data-bind="click: initShareCodeDetail">推广统计</a>
+                <a href="" class='waves-effect waves-light btn' data-bind="click: showQRcode">查看二维码</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPageShareCode()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPosShareCode">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPageShareCode()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/shareCode.js");</script>

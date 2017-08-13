@@ -1,0 +1,75 @@
+<div id="userManager"><br>
+    <div class="row">
+        <div class="input-field col l1">
+            <input id="u_nick" type="text">
+            <label for="u_nick" class="">用户昵称</label>
+        </div>
+        <div class="input-field col l1">
+            <input id="u_phone" type="text">
+            <label for="u_phone" class="">用户联系电话</label>
+        </div>
+        <div class="input-field col l1">
+            <select id="u_type">
+                <option value="" selected>用户类型</option>
+                <option value="true">专家用户</option>
+                <option value="false">普通用户</option>
+                <label>用户类别</label>
+            </select>
+        </div>
+        <div class="input-field col l2">
+            <select id="u_status">
+                <option value="" selected>用户状态</option>
+                <option value="true">黑名单(激活)</option>
+                <option value="history">黑名单(过期)</option>
+                <label>用户状态</label>
+            </select>
+        </div>
+        <div class="input-field col l3">
+            <a class="waves-effect waves-light btn" href="javascript:subLoadUserList()">检 索</a>
+            <a class="waves-effect waves-light btn" href="javascript:initAddUser()">添加新用户</a>
+        </div>
+    </div>
+    <table class="bordered highlight responsive-table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>头像</th>
+            <th>专家姓名</th>
+            <th>昵称</th>
+            <th>用户类型</th>
+            <th>联系电话</th>
+            <th>解除加黑时间</th>
+            <th>加黑原因</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: userList">
+        <tr>
+            <td align="center"><span data-bind="text: $index()+1"></span></td>
+            <td align="center"><img class="circle responsive-img" style="width: 100px;height: 100px" data-bind="attr: {src: user.avatar}"></td>
+            <td align="center"><span data-bind="text: expert_status=='verified'?expert.name:nick"></span></td>
+            <td align="center"><span data-bind="text: nick"></span></td>
+            <td align="center"><span data-bind="text: expert_status=='verified'?'专家用户':'普通用户'"></span></td>
+            <td align="center"><span data-bind="text: phone"></span></td>
+            <td align="center"><span data-bind="text: util.convertTime2Str(block_util)"></span></td>
+            <td align="center"><span data-bind="text: block_reason"></span></td>
+            <td align="right">
+                <a href="" class="btn" data-bind="click: initEditUser">编辑</a>&nbsp;<br class="hide-on-med-and-up">
+                <a href="" class="btn" data-bind="click: showUserTopics">私课列表</a>&nbsp;<br class="hide-on-med-and-up">
+                <a href="" class="btn" data-bind="click: showUserMoney">资金记录</a>&nbsp;<br class="hide-on-med-and-up">
+                <a href="" class="btn" data-bind="click: initAddBlack">加入黑名单</a>&nbsp;<br class="hide-on-med-and-up">
+                <a href="" class="btn" data-bind="click: removeBlack">移除黑名单</a>&nbsp;<br class="hide-on-med-and-up">
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <div align="center">
+        <ul class="pagination">
+            <li class="waves-effect"><a href="javascript:prevPageUser()"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="javascript:void(0)" data-bind="text: startPosUser">1</a></li>
+            <li class="waves-effect"><a href="javascript:nextPageUser()"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>
+<script>$.getScript("operationsManager/js/user.js");</script>
